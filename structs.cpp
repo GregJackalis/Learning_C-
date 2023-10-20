@@ -68,3 +68,25 @@ int main() {
     ptr->myFunction(); //accessing the myFunction "member" of the MyClass type object "obj"
     return 0;
 }
+
+
+//  Another example with the -> and . operators to access structs "methods":
+struct Vector2 {
+    float x;
+    float y;
+};
+
+int main() {
+    Vector2 *vec = new Vector2;
+
+    // Now in order to access Vector2's methods through a POINTER variable like vec in this case, we use ->
+    vec -> x = 0.0f;
+    vec -> y = 0.0f;
+
+
+    Vector2 vecVar;
+
+    // In this case because the variable is NOT a pointer, we use .
+    vecVar.x = 0.0f;
+    vecVar.y = 0.0f;
+}

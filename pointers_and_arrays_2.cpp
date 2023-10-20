@@ -38,14 +38,27 @@ int main() {
     //                     //    pointing at is NOT null (0), continue"
     //                     //  - Lastly, the ++p is the incrementation of the pointer so that it will move to the next character
     //                     //    possibly inside the char array that is pointing at (probably a string that is stored as a char array)
-    //     // cout << *p;
+       // cout << p;
     // }
 
-    // In action: we could use it to print the very first word of a sentence:
+    // In action: we could use it to print the very FIRST WORD of a sentence:
     char sentence[] = "Hello World!";
     char* sentencePointer = &sentence[0];
     for (; *sentencePointer != ' '; ++sentencePointer) { // keep in mind that the "" are DIFFERENT than '', so in this case to say
                                                     // that we want to stop on the first space CHARACTER, we use the ''
         cout << *sentencePointer;
     }
+}
+
+
+// ** Also in arrays, NO MEMORY ALLOCATION IS NEEDED. It automatically finds consequetive memory and "saves" it for the array
+// Also each array has a memory saved, which is the memory address of the very first element of the array!
+//  For example:
+int main() {
+    int numbers[100];
+    int *pointer;
+    pointer = numbers; //this will work and the pointer saves the address of the array (meaning the address of numbers[0])
+
+    // Another way to do this:
+    pointer = &numbers[0];
 }
